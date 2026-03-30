@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de productos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+    <main class="dashboard">
+      <section class="panel form-panel">
+        <header class="panel-header">
+          <p class="badge">Registro</p>
+          <h1>Nuevo producto</h1>
+          <p class="subtitle">Completa los campos y agrégalos a tu catálogo. Se guardan en este navegador.</p>
+        </header>
+
+        <form id="productForm" class="product-form" novalidate>
+          <div class="field-group">
+            <label for="name">Nombre del producto</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Ej. Spray de limpieza"
+              autocomplete="off"
+            />
+            <small class="error-message" data-error-for="name"></small>
+          </div>
+
+          <div class="field-group">
+            <label for="detail">Detalle</label>
+            <textarea
+              id="detail"
+              name="detail"
+              rows="4"
+              placeholder="Descripción breve del producto"
+            ></textarea>
+            <small class="error-message" data-error-for="detail"></small>
+          </div>
+
+          <div class="field-group">
+            <label for="value">Valor</label>
+            <input
+              id="value"
+              name="value"
+              type="number"
+              min="0"
+              step="0.01"
+              inputmode="decimal"
+              placeholder="Ej. 12990"
+            />
+            <small class="error-message" data-error-for="value"></small>
+          </div>
+
+          <button type="submit" class="btn-primary">Agregar Producto</button>
+        </form>
+      </section>
+
+      <section class="panel showcase-panel">
+        <header class="panel-header panel-header-inline">
+          <div>
+            <p class="badge badge-secondary">Vitrina</p>
+            <h2>Productos agregados</h2>
+          </div>
+          <p id="productCount" class="counter">0 productos</p>
+        </header>
+
+        <div id="emptyState" class="empty-state" hidden>Tu catálogo está vacío</div>
+        <div id="productGrid" class="product-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="site-footer__title">Integrantes</p>
+      <ul class="site-footer__names">
+        <li>Manuel Alexander Alvarez Cota</li>
+        <li>Ernesto Miguel Alvarez Garcia</li>
+        <li>Genesis Dayana Espinosa Razo</li>
+      </ul>
+      <p class="site-footer__group">Grupo 4DPGM</p>
+    </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
