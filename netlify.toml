@@ -1,0 +1,4 @@
+# Sitio estático: HTML, CSS y JS en la raíz del repositorio
+[build]
+  command = "echo 'Sitio estático sin compilación'"
+  publish = "."
